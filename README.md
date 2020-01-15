@@ -16,17 +16,31 @@ This package will not work unless used alongside CryptoDock.
 
 ## Usage
 
-1. (import package)
+### Import Package(s)
 
-   `from sdk.cryptodock_sdk import CryptoDockSdk`
+- `from cryptodock import CryptoDockSdk`
+- `from cryptodock import CryptoDockApi, CryptoDockStrategy, CryptoDockBacktest`
 
-2. (initialize SDK)
+### Initialize SDK
 
-   `sdk = CryptoDockSdk(base=<base_url>, port=<port>, version=<api_version>)`
+- `full_sdk = CryptoDockSdk()`
+- `full_sdk.Api.Local.get_products(exchanges="coinbasepro")`
+- `full_sdk.Strategy`
+- `full_sdk.Backtest(<your_strategy>)`
+
+- `api = CryptoDockApi(base=<base_url>, port=<port>, version=<api_version>)`
+- `api.Local.get_exchanges()`
+- `api.CoinbasePro.get_trade_histories('BTC-USDT')`
+
+- `YourStrategy(CryptoDockStrategy)`
+
+- `backtest = CryptoDockBacktest(YourStrategy)`
+- `backtest.run_test(data)`
 
 ## History
 
 - Initial Release
+- Integrating backtest and strategy wrapper, not just api sdk
 
 ## Credits
 

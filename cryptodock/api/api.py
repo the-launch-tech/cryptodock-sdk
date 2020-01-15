@@ -1,6 +1,6 @@
 from .controllers import CoinbasePro, Kucoin, Local
 
-class CryptoDockSdk :
+class CryptoDockApi :
 
     def __init__(self, base, port, version) :
         self.base = base
