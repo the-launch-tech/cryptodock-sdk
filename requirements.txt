@@ -7,9 +7,10 @@ pip install wheel
 To check contents of package: tar tzf cryptodock-sdk-0.0.1.tar.gz
 
 To upload package:
+python setup.py sdist bdist_wheel
 twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 or
-python setup.py sdist upload
+twine upload dist/*
 
 For Production (not for use external to CryptoDock):
 pip install requests
